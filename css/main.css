@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root{
+    --main-color: #fc5151;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line{
+    border-top: 3px solid var(--main-color);
+    height: 5px;
+    max-width: 100px;
+    padding: 0;
+}
+
+.brand{
+    width: 150px;
+}
+
+/* Home Section */
+#home{
+    background-image: url(/img/bg.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#home::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .5;
+    z-index: -1;
+}
+
+#home .home{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#home h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#home p{
+    display: block;
+    width: fit-content;
+    font-size: 2rem;
+    text-transform: uppercase;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+
+#home h1:nth-child(1){
+    animation-delay: 1s;
+}
+
+#home p:nth-child(2){
+    animation-delay: 2s;
+}
+
+#home h1 span,
+#home p span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--main-color);
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+}
+
+#home h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+
+#home p:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+
+#home .btn-shop{
+    display: inline-block;
+    padding: 10px 30px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+
+#home .btn-shop:hover{
+    color: #ffffff;
+    background-color: var(--main-color);
+}
+/* End Home Section */
+
+/* Catalogo Section */
+#catalogo .catalogo{
+    flex-direction: column;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0 0 0;
+}
+
+#catalogo .catalogo-title{
+    font-size: 2rem;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+#catalogo p {
+    font-size: 2rem;
+    margin-top: 10px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+
+#catalogo .catalogo-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+#catalogo .catalogo-item{
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-image: url(/img/B16.png);
+    background-size: cover;
+    background-position: center;
+    margin: 10px 5%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#catalogo .catalogo-item::after{
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #222222 0%, #111111 100%);
+    opacity: .8;
+    z-index: -1;
+}
+
+#catalogo .catalogo-item h3{
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+}
+
+
+/* End Catalogo Section */
+
+/* Products Section */
+#products{
+    background: #222222;
+}
+#products .products{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+#products .products-title{
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+
+#products .products-item{
+    background: rgb(41, 41, 41);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+#products .products-item img{
+    opacity: .5;
+    position: relative;
+    vertical-align: top;
+    transition: 0.6s;
+    transition-property: opacity;
+}
+
+#products .products-item .products--details{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+#products .products-item .products--details h2{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 75px 0;
+    transition: 0.4s;
+    transition-property: transform;
+}
+
+#products .products-item:hover .products--details h2{
+    transform: translateY(-30px);
+}
+
+#products .products-item .products--details p{
+    margin: 30px 30px 0 30px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    opacity: 0;
+    transition: 0.6s;
+    transition-property: opacity, transform;
+}
+
+#products .products-item:hover .products--details p{
+    opacity: 1;
+    transform: translateY(-40px);
+}
+
+#products .products-item .products--details .more{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    bottom: -90px;
+    transition: 0.6s;
+    transition-property: bottom;
+}
+
+#products .products-item:hover .products--details .more{
+    bottom: 0;
+}
+
+#products .products-item .products--details .more .read-more{
+    color: var(--main-color);
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 2px solid var(--main-color);
+    padding: 5px 15px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+
+#products .products-item .products--details .more .read-more:hover{
+    background: var(--main-color);
+    color: #ffffff;
+}
+
+/* End Products Section */
+
+/* Contact Section */
+#contact .contact{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0 0 0;
+}
+
+#contact .contact-title{
+    font-size: 2rem;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+#contact .contact-body{
+    width: 400px;
+}
+
+#contact a{
+    transition: .3s ease color;
+}
+
+#contact a:hover{
+    color: var(--main-color);
+}
+
+#contact .contact-item{
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 15px 0 #0000002c;
+    filter: grayscale(1);
+    transition: .3s ease box-shadow, filter;
+}
+
+#contact .contact-item:hover{
+    box-shadow: 0px 0px 5px 0 #0000002c;
+    filter: grayscale(0);
+}
+
+#contact .icon{
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#contact .contact-info h3{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#contact .contact-info h4{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+}
+/* End Contact Section */
+
+/* Footer */
+#footer{
+    background-color: #161616;
+}
+
+#footer .footer{
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+#footer h2{
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    margin: 10px 0;
+}
+
+#footer .social-icon{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#footer .social-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 0 5px;
+}
+
+#footer .social-item img{
+    filter: grayscale(1);
+    margin-top: 5px;
+    height: 25px;
+    width: 25px;
+    transition: .3s ease filter;
+}
+
+#footer .social-item:hover img{
+    filter: grayscale(0);
+}
+
+#footer p{
+    padding: 10px 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/* End Footer */
+
+/* Keyframes */
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+/* End Keyframes */
+
+
+/* Media Querys For Tablet */
+@media only screen and (min-width: 768px){
+    #products .products-title{
+        font-size: 3rem;
+    }
+
+    /* CATALOGO SECTION */
+    #catalogo .catalogo{
+        padding: 30px 0;
+    }
+
+    #catalogo .catalogo-body .catalogo-item{
+        flex-basis: 45%;
+        margin: 1.5%;
+    }
+    /* END CATALOGO SECTION */
+
+    /* PRODUCTS SECTION */
+    #products .products-body{
+        padding: 30px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    #products .products-body .products-item{
+        flex-basis: 45%;
+        margin: 10px;
+    }
+    /* END PRODUCTS SECTION */
+
+    /* CONTACT SECTION */
+    #contact .contact-title{
+        font-size: 3rem;
+    }
+
+    #contact .contact{
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    #contact .contact .contact-body{
+        padding: 30px;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #contact .contact .contact-body .contact-item{
+        width: 200px;
+        margin: 10px;
+    }
+    /* END CONTACT SECTION */
+}
+/* End Media Querys For Tablet */
+
+/* Media Querys For Desktop*/
+
+/* END Media Querys For Desktop*/
